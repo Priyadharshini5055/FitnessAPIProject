@@ -1,0 +1,65 @@
+📘 Fitness Booking API Guide
+
+Base URL: http://localhost:8000/
+
+----------------------------
+1. ✅ GET /classes/
+----------------------------
+Description: List all upcoming fitness classes.
+
+Sample Request:
+GET /classes/
+
+Response:
+[
+  {
+    "id": 1,
+    "name": "Yoga",
+    "instructor": "Amit",
+    "start_time": "2025-06-12T08:00:00Z",
+    "available_slots": 5
+  }
+]
+
+----------------------------
+2. ✅ POST /book/
+----------------------------
+Description: Book a fitness class.
+
+Sample Request:
+POST /book/
+Content-Type: application/json
+
+{
+  "class_id": 1,
+  "client_name": "Ravi Kumar",
+  "client_email": "ravi@example.com"
+}
+
+Sample Response:
+{
+  "success": "Booking confirmed"
+}
+
+----------------------------
+3. ✅ GET /bookings/?email=ravi@example.com
+----------------------------
+Description: View bookings by email address.
+
+Sample Request:
+GET /bookings/?email=ravi@example.com
+
+Sample Response:
+[
+  {
+    "id": 1,
+    "fitness_class": 1,
+    "client_name": "Ravi Kumar",
+    "client_email": "ravi@example.com",
+    "booked_at": "2025-06-11T14:45:00Z"
+  }
+]
+
+📌 Note:
+- All datetime values are in UTC.
+- IST is the default timezone for class creation.

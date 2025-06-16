@@ -1,0 +1,74 @@
+{
+  "info": {
+    "name": "Fitness Booking API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Get Classes",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/classes/",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "classes"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Book Class",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"class_id\": 1,\n  \"client_name\": \"Ravi Kumar\",\n  \"client_email\": \"ravi@example.com\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8000/book/",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "book"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Bookings by Email",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:8000/bookings/?email=ravi@example.com",
+          "host": [
+            "localhost"
+          ],
+          "port": "8000",
+          "path": [
+            "bookings"
+          ],
+          "query": [
+            {
+              "key": "email",
+              "value": "ravi@example.com"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}
